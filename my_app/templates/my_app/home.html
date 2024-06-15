@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bamper</title>
+<body>
+{% block content %}
+    <header>
+      <div class="header_main">
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="/"><img src="/static/images/smallwhite.png" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link active" href="/">Əsas <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/stores/">Mağazalar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/contact/">Əlaqə</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/about/">Haqqımızda</a>
+                </li>
+              </ul>
+              
+            </div>
+          </nav>
+          <div class="header-inner" style="padding-top: 50px; padding-bottom: 50px;">
+            <h1 id="header_main_text" class="header_main_text_h1">Avtomobilini seç &amp; Hissəni  tap</h1>
+            <p class="header_main_text_p">Ən sərfəli razılaşmanı əldə et!</p>
+            <div class="search_and_select">
+                <div class="header_search_input">
+                  <form  action="/result/" style="display: flex; width: 100%;">
+                    <input type="text" placeholder="VIN kodunuzu daxil edin" name="vin" required="">
+                    <button type="submit" style="border: none; background: transparent; outline: none;"><img width="25px" src="/static/images/lupa.png" alt=""></button>
+                    
+                  </form>
+                  </div>
+                <div class="btn-container">
+                  <a href="/manual/"><button class="vin_filter_btn">Manual seçim</button></a>
+                  
+                </div>
+                <div id="textContainer" class="visible">
+                  <p><svg class="check-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff !important}</style><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> Asan və tez </p>
+                  <p><svg class="check-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff !important}</style><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> Ən münasib qiymət</p>
+                  <p><svg class="check-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff !important}</style><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> Real vaxtda təkliflər</p>
+              </div>
+                <!-- <div id="inputContainer" class="hidden filters" >
+                    <select class="filter_mark filter-item"  name="" id="">
+                        <option value="">Mark</option>
+                        <option value="">Mercedes-Benz</option>
+                        <option value="">BMW</option>
+                        <option value="">Chevrolet</option>
+                        <option value="">Honda</option>
+                        <option value="">Audi</option>
+                    </select>
+
+                    <select class="filter_model filter-item" name="" id="">
+                        <option value="">Model</option>
+                        <option value="">S-Class 65 Coupe AMG</option>
+                        <option value="">A4</option>
+                        <option value="">A6</option>
+                        <option value="">Insight</option>
+                        <option value="">Cruze</option>
+                        <option value="">Malibu</option>
+                    </select>
+
+                    <select class="filter_type" filter-item name="" id="">
+                        <option value="">Sinif</option>
+                        <option value="">SUV</option>
+                        <option value="">Sedan</option>
+                        <option value="">Hatchback</option>
+                        <option value="">Coupe</option>
+                        <option value="">Minivan</option>
+                    </select>
+                </div> -->
+            </div>
+
+          </div>
+        </div>
+    </header>
+    <!-- /////////////shadow_container////////// -->
+    <div class="shadow-container">
+      
+      <div class="main-text">
+        
+        <div>
+          <h2 id="title" class="title">Bamper nədir?</h2>
+        </div>
+
+        <div>
+                    
+          <p class="text-title">Biz Bamper olaraq sürücülərin rahat və tez yolnan lazımi ehtiyat hissəsini tapıb, müxtəlif satıcılardan təkliflər alıb ən uyğunun seçməsi, satıcıların isə əlavə online müştəri bazası qazanması üçün servis təklif edirik.</p>
+        </div>
+      </div>
+       
+      <div class="img-div">
+        <div class="container-fluid">
+          <h2 id="title2" class="title">Bamper necə işləyir?</h2>
+          <div style="margin-top: 35px;" class="row">
+            <div class="col-md-4">
+              <div class="vin-menu">
+                <img class="vin-menu-img" src="/static/images/vin-menu.png" alt="">
+              </div>
+              <h3 class="vin-menu-h3">Avtomobilini təyin et</h3>
+              <p class="vin-menu-p">Avtomobilinizi təyin etmək üçün VIN kodu daxil edin və ya Marka,Model və Buraxılış ilini əl ilə seçin.</p>
+
+            </div>
+            <div class="col-md-4">
+              <div class="vin-menu">
+                <img class="vin-menu-img" src="/static/images/choose.png" alt="">
+              </div>
+              <h3 class="vin-menu-h3">Ehtiyat hissəsini seç </h3>
+              <p class="vin-menu-p">Sizə lazım olan ehtiyat hissəsini seçin və sorğu yaradın.</p>
+            </div>
+            <div class="col-md-4">
+              <div class="vin-menu-green">
+                <img class="check-img" src="/static/images/check.png" alt="">
+              </div>
+              <h3 class="vin-menu-h3">Uyğun razılaşmanı et</h3>
+              <p class="vin-menu-p">Fərqli satıcılardan təkliflər alın,ən uyğun seçimi edin,və razılaşma edin.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="main-next">
+        <h2 id="title3" class="title">Bamper-da satıcı ol və onlayn müştəri bazası qazan!</h2>
+        <div>
+          <p class="next-title"><img src="/static/images/chma.png" style="width: 25px; margin-right: 10px;" alt="">Pulsuz mağaza yaradmaq imkanı</p>
+          <p class="next-title"><img src="/static/images/chma.png" style="width: 25px; margin-right: 10px;" alt="">Limitsiz təkliflər göndərmək imkanı</p>
+          <p class="next-title"><img src="/static/images/chma.png" style="width: 25px; margin-right: 10px;" alt="">Çox sayda müştəri qazanmaq fürsəti</p>
+        </div>
+        <div>
+          <a href="tel:+994704050799"><button class="mağaza-btn">Pulsuz mağaza yarat</button></a>
+        </div>
+
+      </div>
+
+      
+
+       
+    </div>
+
+    <div class="contact-container container text-center mt-5">
+      <h1 id="title4">Bizimlə Əlaqə Saxla!</h1>
+      <form action="" method="POST">
+        <input type="hidden" name="csrfmiddlewaretoken" value="2YM0IOabG9v8RUA0bEaFxk8MpXgSUmG34QLxfQjIFesrh4mpRluwxh0tgkc1hxCa">
+        <input type="text" name="name" id="question" placeholder="Adınızı daxil edin" class="contact-name-input mt-4" required="">
+        <input type="text" name="phone" id="question" placeholder="Nömrənizi daxil edin" class="contact-name-input mt-3" required="">
+        <input type="email" name="email" id="question" placeholder="E-poçt ünvanınızı daxil edin" class="contact-name-input mt-3" required="">
+        <textarea name="message" cols="40" rows="10" id="question" placeholder="Mesajınızı daxil edin" class="contact-name-textarea mt-3" style="resize: none;" required=""></textarea>
+        <br>
+        <input type="submit" class="contact-btn mt-3" value="Göndər">
+        
+      </form>
+    </div>
+
+
+{% endblock content %}
+</body></html>
